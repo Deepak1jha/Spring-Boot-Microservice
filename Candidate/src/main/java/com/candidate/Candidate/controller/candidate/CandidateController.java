@@ -21,7 +21,12 @@ public class CandidateController {
     }
 
     @GetMapping("/")
-    public ResponseEntity<?> fetch() {
-        return ResponseEntity.ok(new ApiResponseVO(Enums.ResponseType.SUCCESS, "Candidate Fetched Successfully", candidateService.fetch()));
+    public ResponseEntity<?> fetchAll() {
+        return ResponseEntity.ok(new ApiResponseVO(Enums.ResponseType.SUCCESS, "Candidate Fetched Successfully", candidateService.fetchAll()));
+    }
+
+    @GetMapping("/{candidateUID}")
+    public ResponseEntity<?> fetch(@PathVariable String candidateUID) {
+        return ResponseEntity.ok(new ApiResponseVO(Enums.ResponseType.SUCCESS, "Candidate and Address Fetched Successfully", candidateService.fetch(candidateUID)));
     }
 }
