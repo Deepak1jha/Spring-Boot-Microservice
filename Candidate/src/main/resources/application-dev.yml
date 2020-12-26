@@ -1,0 +1,11 @@
+server:
+  port: 1996
+spring:
+  data:
+    mongodb:
+      database: mirco_candidate
+      host: localhost
+      port: 27017
+
+
+

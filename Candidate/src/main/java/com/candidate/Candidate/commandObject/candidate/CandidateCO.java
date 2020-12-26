@@ -1,0 +1,35 @@
+package com.candidate.Candidate.commandObject.candidate;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.hibernate.validator.constraints.NotBlank;
+
+import javax.validation.constraints.NotNull;
+
+@Data
+@NoArgsConstructor
+public class CandidateCO {
+
+    @NotNull(message = "validation.CandidateCO.firstName.empty")
+    private String firstName;
+    private String middleName;
+    private String lastName;
+    @NotBlank(message = "validation.CandidateCO.gender.empty")
+    private String gender;
+    @NotBlank(message = "validation.CandidateCO.dateOfBirth.empty")
+    private String dateOfBirth;
+    @NotBlank(message = "validation.CandidateCO.username.empty")
+    private String username;
+    @NotBlank(message = "validation.CandidateCO.phoneNumber.empty")
+    private String phoneNumber;
+
+    public CandidateCO(String firstName, String middleName, String lastName, String gender, String dateOfBirth,  String username,  String phoneNumber) {
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.lastName = lastName;
+        this.gender = gender;
+        this.dateOfBirth = dateOfBirth;
+        this.username = username;
+        this.phoneNumber = phoneNumber;
+    }
+}
