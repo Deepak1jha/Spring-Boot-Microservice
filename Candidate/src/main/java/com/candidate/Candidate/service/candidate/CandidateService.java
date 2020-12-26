@@ -5,10 +5,12 @@ import com.candidate.Candidate.enums.Enums;
 import com.candidate.Candidate.model.candidate.Candidate;
 import com.candidate.Candidate.repository.candidate.CandidateRepository;
 import com.candidate.Candidate.util.exception.CandidateNotFoundException;
+import com.candidate.Candidate.valueObject.address.AddressVO;
 import com.candidate.Candidate.valueObject.candidate.CandidateVO;
 import com.candidate.Candidate.valueObject.response.ResponseTemplateVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +20,8 @@ public class CandidateService {
 
     @Autowired
     private CandidateRepository candidateRepository;
+    @Autowired
+    private RestTemplate restTemplate;
 
     public CandidateVO create(CandidateCO candidateCO) {
         Candidate candidate = new Candidate(candidateCO);
@@ -34,5 +38,10 @@ public class CandidateService {
 
     public ResponseTemplateVO fetch(String candidateUID) {
         Candidate candidate = candidateRepository.findByUniqueId(candidateUID).orElseThrow(() -> new CandidateNotFoundException("Candidate Not Found with this UID" + candidateUID));
+        AddressVO addressVO = restTemplate.getForObject("https://localhost:1996/address/" + candidateUID, AddressVO.class);
+        ResponseTemplateVO responseTemplateVO = new ResponseTemplateVO();
+        responseTemplateVO.setCandidate(candidate);
+        responseTemplateVO.setAddressVO(addressVO);
+        return responseTemplateVO;
     }
 }

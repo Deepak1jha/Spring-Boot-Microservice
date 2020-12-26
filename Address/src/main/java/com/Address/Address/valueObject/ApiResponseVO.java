@@ -7,8 +7,7 @@ import java.io.Serializable;
 
 @Data
 @NoArgsConstructor
-public
-class ApiResponseVO implements Serializable {
+public class ApiResponseVO implements Serializable {
 
     private Enums.ResponseType responseType;
     private String message;
