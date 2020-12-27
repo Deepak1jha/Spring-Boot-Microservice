@@ -1,4 +1,4 @@
-package com.Address.Address.commandObject.candidate;
+package com.Address.Address.commandObject.address;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

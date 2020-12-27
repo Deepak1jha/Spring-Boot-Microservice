@@ -4,11 +4,13 @@ import com.candidate.Candidate.commandObject.candidate.CandidateCO;
 import com.candidate.Candidate.enums.Enums;
 import com.candidate.Candidate.service.candidate.CandidateService;
 import com.candidate.Candidate.valueObject.apiResponse.ApiResponseVO;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@Slf4j
 @RequestMapping(value = "/candidate")
 public class CandidateController {
 

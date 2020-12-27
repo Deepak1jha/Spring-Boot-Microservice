@@ -1,6 +1,6 @@
 package com.Address.Address.model.address;
 
-import com.Address.Address.commandObject.candidate.AddressCO;
+import com.Address.Address.commandObject.address.AddressCO;
 import com.Address.Address.enums.Enums;
 import com.Address.Address.util.AppUtil;
 import lombok.Data;
@@ -41,6 +41,7 @@ public class Address implements Serializable {
         this.country = addressCO.getCountry();
         this.zipcode = addressCO.getZipcode();
         this.landMark = addressCO.getLandMark();
+        this.candidateUID = addressCO.getCandidateUID();
     }
 
 }

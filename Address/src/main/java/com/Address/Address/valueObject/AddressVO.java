@@ -16,6 +16,7 @@ public class AddressVO implements Serializable {
     private String country;
     private String zipcode;
     private String landMark;
+    private String candidateUID;
 
     public AddressVO(Address address) {
         this.addressLineOne = address.getAddressLineOne();
@@ -24,6 +25,7 @@ public class AddressVO implements Serializable {
         this.country = address.getCountry();
         this.zipcode = address.getZipcode();
         this.landMark = address.getLandMark();
+        this.candidateUID = address.getCandidateUID();
     }
 
 }

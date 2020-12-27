@@ -23,13 +23,4 @@ public class CandidateCO {
     @NotBlank(message = "validation.CandidateCO.phoneNumber.empty")
     private String phoneNumber;
 
-    public CandidateCO(String firstName, String middleName, String lastName, String gender, String dateOfBirth,  String username,  String phoneNumber) {
-        this.firstName = firstName;
-        this.middleName = middleName;
-        this.lastName = lastName;
-        this.gender = gender;
-        this.dateOfBirth = dateOfBirth;
-        this.username = username;
-        this.phoneNumber = phoneNumber;
-    }
 }
