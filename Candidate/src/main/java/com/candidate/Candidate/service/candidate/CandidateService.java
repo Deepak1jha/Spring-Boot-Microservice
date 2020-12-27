@@ -46,7 +46,7 @@ public class CandidateService {
 
     public ResponseTemplateVO fetch(String candidateUID) {
         Candidate candidate = candidateRepository.findByUniqueId(candidateUID).orElseThrow(() -> new CandidateNotFoundException("Candidate Not Found with this UID" + candidateUID));
-        AddressVO addressVO = restTemplate.getForObject("http://localhost:1997/address/" + candidateUID, AddressVO.class);
+        AddressVO addressVO = restTemplate.getForObject("http://ADDRESS-SERVICE/address/" + candidateUID, AddressVO.class);
         ResponseTemplateVO responseTemplateVO = new ResponseTemplateVO();
         responseTemplateVO.setCandidate(candidate);
         responseTemplateVO.setAddressVO(addressVO);

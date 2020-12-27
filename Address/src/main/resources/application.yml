@@ -1,5 +1,9 @@
 server:
   port: 1997
+
+spring:
+  application:
+    name: ADDRESS-SERVICE
 eureka:
   client:
     registerWithEureka: true
