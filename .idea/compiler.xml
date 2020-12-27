@@ -25,5 +25,9 @@
         <module name="Skills.main" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Skills" target="1.8" />
+      <module name="Social" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
