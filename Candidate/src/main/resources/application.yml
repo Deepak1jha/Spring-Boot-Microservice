@@ -4,6 +4,12 @@ server:
 spring:
   application:
     name: CANDIDATE-SERVICE
+    data:
+      mongodb:
+        database: springMicroService
+        host: localhost
+        port: 27017
+
 eureka:
   client:
     registerWithEureka: true

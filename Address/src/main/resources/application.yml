@@ -4,6 +4,11 @@ server:
 spring:
   application:
     name: ADDRESS-SERVICE
+    data:
+      mongodb:
+        database: springMicroService
+        host: localhost
+        port: 27017
 eureka:
   client:
     registerWithEureka: true
